@@ -3,8 +3,8 @@
   <img
     src="https://bulma.io/images/made-with-bulma.png"
     alt="Made with Bulma"
-    width="256"
-    height="48">
+    width="106"
+    height="auto">
 </a>
 # StencilJs Component with Bulma CSS 
 
