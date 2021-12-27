@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { MyComponent } from './input-component';
+import { BlInput } from './input-component';
 
 describe('input-component', () => {
   it('renders', async () => {
     const { root } = await newSpecPage({
-      components: [MyComponent],
+      components: [BlInput],
       html: '<input-component></input-component>',
     });
     expect(root).toEqualHtml(`
@@ -20,7 +20,7 @@ describe('input-component', () => {
 
   it('renders with values', async () => {
     const { root } = await newSpecPage({
-      components: [MyComponent],
+      components: [BlInput],
       html: `<input-component first="Stencil" last="'Don't call me a framework' JS"></input-component>`,
     });
     expect(root).toEqualHtml(`

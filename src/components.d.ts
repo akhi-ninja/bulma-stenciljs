@@ -21,6 +21,18 @@ export namespace Components {
         "size": 'small' | 'default' | 'large';
         "type": 'email' | 'text' | 'password';
     }
+    interface BlNotification {
+        "class": 'is-primary' | 'is-dark' | 'is-light' | 'is-black' | 'is-text' | 'is-ghost' | 'is-link' | 'is-info' | 'is-success' | 'is-warning' | 'is-danger';
+        "clickEvent": any;
+        "shape": 'square' | 'round';
+        "size": 'small' | 'default' | 'large';
+    }
+    interface BlProgress {
+        "class": 'is-primary' | 'is-dark' | 'is-light' | 'is-black' | 'is-text' | 'is-ghost' | 'is-link' | 'is-info' | 'is-success' | 'is-warning' | 'is-danger';
+        "clickEvent": any;
+        "max": string;
+        "value": string;
+    }
     interface BlTab {
         "active": boolean;
         "disabled": boolean;
@@ -43,6 +55,18 @@ declare global {
         prototype: HTMLBlInputElement;
         new (): HTMLBlInputElement;
     };
+    interface HTMLBlNotificationElement extends Components.BlNotification, HTMLStencilElement {
+    }
+    var HTMLBlNotificationElement: {
+        prototype: HTMLBlNotificationElement;
+        new (): HTMLBlNotificationElement;
+    };
+    interface HTMLBlProgressElement extends Components.BlProgress, HTMLStencilElement {
+    }
+    var HTMLBlProgressElement: {
+        prototype: HTMLBlProgressElement;
+        new (): HTMLBlProgressElement;
+    };
     interface HTMLBlTabElement extends Components.BlTab, HTMLStencilElement {
     }
     var HTMLBlTabElement: {
@@ -58,6 +82,8 @@ declare global {
     interface HTMLElementTagNameMap {
         "bl-button": HTMLBlButtonElement;
         "bl-input": HTMLBlInputElement;
+        "bl-notification": HTMLBlNotificationElement;
+        "bl-progress": HTMLBlProgressElement;
         "bl-tab": HTMLBlTabElement;
         "bl-tabs": HTMLBlTabsElement;
     }
@@ -78,6 +104,18 @@ declare namespace LocalJSX {
         "size"?: 'small' | 'default' | 'large';
         "type"?: 'email' | 'text' | 'password';
     }
+    interface BlNotification {
+        "class"?: 'is-primary' | 'is-dark' | 'is-light' | 'is-black' | 'is-text' | 'is-ghost' | 'is-link' | 'is-info' | 'is-success' | 'is-warning' | 'is-danger';
+        "clickEvent"?: any;
+        "shape"?: 'square' | 'round';
+        "size"?: 'small' | 'default' | 'large';
+    }
+    interface BlProgress {
+        "class"?: 'is-primary' | 'is-dark' | 'is-light' | 'is-black' | 'is-text' | 'is-ghost' | 'is-link' | 'is-info' | 'is-success' | 'is-warning' | 'is-danger';
+        "clickEvent"?: any;
+        "max"?: string;
+        "value"?: string;
+    }
     interface BlTab {
         "active"?: boolean;
         "disabled"?: boolean;
@@ -89,6 +127,8 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "bl-button": BlButton;
         "bl-input": BlInput;
+        "bl-notification": BlNotification;
+        "bl-progress": BlProgress;
         "bl-tab": BlTab;
         "bl-tabs": BlTabs;
     }
@@ -99,6 +139,8 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "bl-button": LocalJSX.BlButton & JSXBase.HTMLAttributes<HTMLBlButtonElement>;
             "bl-input": LocalJSX.BlInput & JSXBase.HTMLAttributes<HTMLBlInputElement>;
+            "bl-notification": LocalJSX.BlNotification & JSXBase.HTMLAttributes<HTMLBlNotificationElement>;
+            "bl-progress": LocalJSX.BlProgress & JSXBase.HTMLAttributes<HTMLBlProgressElement>;
             "bl-tab": LocalJSX.BlTab & JSXBase.HTMLAttributes<HTMLBlTabElement>;
             "bl-tabs": LocalJSX.BlTabs & JSXBase.HTMLAttributes<HTMLBlTabsElement>;
         }

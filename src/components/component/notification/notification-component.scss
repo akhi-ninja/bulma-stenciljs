@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+:host {
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+:host([disabled]) {
+    pointer-events: none;
+}
+
+

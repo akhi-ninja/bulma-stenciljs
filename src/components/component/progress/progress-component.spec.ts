@@ -1,36 +1,36 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { BlButton } from './button-component';
+import { BlProgress } from './progress-component';
 
-describe('button-component', () => {
+describe('notification-component', () => {
   it('renders', async () => {
     const { root } = await newSpecPage({
-      components: [BlButton],
-      html: '<button-component></button-component>',
+      components: [BlProgress],
+      html: '<progress-component></progress-component>',
     });
     expect(root).toEqualHtml(`
-      <button-component>
+      <progress-component>
         <mock:shadow-root>
           <div>
             Hello, World! I'm
           </div>
         </mock:shadow-root>
-      </button-component>
+      </progress-component>
     `);
   });
 
   it('renders with values', async () => {
     const { root } = await newSpecPage({
-      components: [BlButton],
-      html: `<button-component first="Stencil" last="'Don't call me a framework' JS"></button-component>`,
+      components: [BlProgress],
+      html: `<progress-component first="Stencil" last="'Don't call me a framework' JS"></progress-component>`,
     });
     expect(root).toEqualHtml(`
-      <button-component first="Stencil" last="'Don't call me a framework' JS">
+      <notification-component first="Stencil" last="'Don't call me a framework' JS">
         <mock:shadow-root>
           <div>
             Hello, World! I'm Stencil 'Don't call me a framework' JS
           </div>
         </mock:shadow-root>
-      </button-component>
+      </notification-component>
     `);
   });
 });
